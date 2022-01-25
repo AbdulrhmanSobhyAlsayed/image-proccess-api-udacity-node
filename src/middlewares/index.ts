@@ -32,5 +32,10 @@ export function ValidatePassedParameters(
     return;
   }
 
+  if (width < 1 || height < 1) {
+    res.status(400).send("height and width must be greater than zero");
+    return;
+  }
+
   next();
 }
